@@ -1,50 +1,63 @@
-// 1. Personalização de Boas-vindas
+// 1. Variáveis de Estado (Processamento de Informação)
+const appState = {
+    userName: "",
+    fontSize: 16
+};
+
+// 2. Seleção de Elementos
 const btnWelcome = document.getElementById('btn-welcome');
 const inputName = document.getElementById('user-name');
-const welcomeMsg = document.getElementById('welcome-msg');
-const userBox = document.getElementById('user-interact');
+const welcomeArea = document.getElementById('welcome-msg');
+const interactionArea = document.getElementById('user-interact');
+const themeBtn = document.getElementById('theme-btn');
+const fontBtn = document.getElementById('font-up');
 
+// 3. Função: Boas-vindas Personalizada (Manipulação do DOM)
 btnWelcome.addEventListener('click', () => {
-    const nome = inputName.value.trim();
-    if (nome) {
-        userBox.style.display = 'none';
-        welcomeMsg.innerHTML = `<h3>Bem-vindo ao Portal, ${nome}!</h3><p>Obrigado por apoiar a produção sustentável.</p>`;
-        welcomeMsg.classList.remove('hidden');
-        welcomeMsg.style.color = '#1b5e20';
-        welcomeMsg.style.fontWeight = 'bold';
+    const rawName = inputName.value.trim();
+    
+    if (rawName.length >= 3) {
+        appState.userName = rawName;
+        // Esconde o formulário e exibe mensagem personalizada
+        interactionArea.classList.add('hidden');
+        welcomeArea.innerHTML = `
+            <div style="padding: 20px; border: 2px solid var(--primary); border-radius: 15px; display: inline-block;">
+                <h3>Seja bem-vindo(a), ${appState.userName}! 🌱</h3>
+                <p>Explore nosso conteúdo e descubra como o agro e a natureza caminham juntos.</p>
+            </div>
+        `;
+        welcomeArea.classList.remove('hidden');
     } else {
-        alert("Por favor, digite seu nome!");
+        alert("Por favor, digite seu nome (mínimo 3 letras).");
     }
 });
 
-// 2. Acessibilidade: Modo Escuro
-const themeBtn = document.getElementById('theme-btn');
+// 4. Função: Modo Escuro (Acessibilidade)
 themeBtn.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
+    console.log("Usuário alterou o contraste da página.");
 });
 
-// 3. Acessibilidade: Controle de Fonte
-let fontSize = 16;
-document.getElementById('font-up').addEventListener('click', () => {
-    fontSize += 2;
-    if (fontSize > 24) fontSize = 16;
-    document.documentElement.style.fontSize = fontSize + 'px';
+// 5. Função: Tamanho de Fonte (Acessibilidade)
+fontBtn.addEventListener('click', () => {
+    appState.fontSize += 2;
+    if (appState.fontSize > 26) appState.fontSize = 16; // Reinicia se ficar muito grande
+    document.documentElement.style.fontSize = appState.baseSize + "px";
+    // Ajuste direto no body para garantir efeito imediato
+    document.body.style.fontSize = appState.fontSize + 'px';
 });
 
-// 4. Manipulação de Formulário (Simulação de Envio)
+// 6. Função: Formulário de Contato (Interatividade funcional)
 const contactForm = document.getElementById('contact-form');
 const statusMsg = document.getElementById('form-status');
 
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault(); // Impede o recarregamento
-    const userEmail = document.getElementById('email').value;
+contactForm.addEventListener('submit', (event) => {
+    event.preventDefault(); // Impede o recarregamento da página
     
-    // Processamento antes de exibir
-    console.log(`Mensagem recebida de: ${userEmail}`);
+    const email = document.getElementById('email').value;
+    console.log(`Recebendo mensagem de: ${email}`);
     
-    contactForm.style.display = 'none';
+    // Altera o DOM para mostrar sucesso
+    contactForm.classList.add('hidden');
     statusMsg.classList.remove('hidden');
-    statusMsg.style.padding = '20px';
-    statusMsg.style.background = '#8bc34a';
-    statusMsg.style.borderRadius = '8px';
 });
