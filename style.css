@@ -1,80 +1,64 @@
-/* Variáveis de Identidade Visual */
+
+/* Variáveis de Cor */
 :root {
     --primary: #2e7d32;
     --accent: #aeea00;
     --bg: #ffffff;
     --text: #333333;
-    --light-grey: #f0f4f0;
-    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --card-bg: #f9f9f9;
 }
 
-/* Estado do Modo Escuro */
 body.dark-mode {
     --bg: #121212;
-    --text: #e0e0e0;
-    --light-grey: #1e1e1e;
+    --text: #f0f0f0;
+    --card-bg: #1e1e1e;
     --primary: #4caf50;
 }
 
-/* Reset e Configurações Globais */
-* { margin: 0; padding: 0; box-sizing: border-box; transition: var(--transition); }
-html { scroll-behavior: smooth; }
-body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
-.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-.section-padding { padding: 80px 0; }
-.hidden { display: none !important; }
-.white-text { color: white !important; }
+* { margin: 0; padding: 0; box-sizing: border-box; transition: 0.3s ease; }
 
-/* Navegação */
-.navbar { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
-.logo { font-size: 1.6rem; font-weight: 800; color: var(--primary); }
-.logo span { color: var(--accent); }
-.nav-links { display: flex; list-style: none; gap: 20px; }
-.nav-links a { text-decoration: none; color: var(--text); font-weight: 600; }
-.nav-links a:hover { color: var(--accent); }
-
-.accessibility button { 
-    background: var(--primary); color: white; border: none; 
-    padding: 8px 15px; border-radius: 20px; cursor: pointer; font-weight: bold;
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
 }
 
-/* Hero Section */
-.hero { background: var(--light-grey); padding: 100px 0; text-align: center; border-radius: 0 0 50px 50px; }
-.hero h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; }
-.hero span { color: var(--primary); }
-.user-box { margin-top: 30px; }
-.input-group { display: flex; justify-content: center; gap: 10px; margin-top: 15px; }
-input, textarea { padding: 12px; border: 2px solid #ddd; border-radius: 8px; width: 100%; max-width: 300px; }
-#btn-welcome { background: var(--primary); color: white; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; font-weight: bold; }
+.container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+/* Navbar */
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
+.logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); }
+.logo span { color: var(--accent); }
+.accessibility button { padding: 8px 12px; cursor: pointer; border: none; border-radius: 5px; background: var(--primary); color: white; margin-left: 5px; }
+
+/* Hero */
+.hero { text-align: center; padding: 60px 0; background: linear-gradient(rgba(0,0,0,0.02), rgba(0,0,0,0.05)); border-radius: 0 0 50px 50px; }
+h1 { font-size: 2.5rem; margin-bottom: 10px; }
+h1 span { color: var(--primary); }
+.interactive-area { margin-top: 20px; }
+input { padding: 10px; border: 1px solid #ccc; border-radius: 5px; width: 250px; }
+#start-btn { padding: 10px 20px; background: var(--primary); color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+
+/* Vídeo */
+.video-container { margin-top: 20px; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+.section-title { margin: 40px 0 20px; border-left: 5px solid var(--accent); padding-left: 15px; }
 
 /* Galeria */
-.section-title { border-left: 6px solid var(--accent); padding-left: 15px; margin-bottom: 40px; font-size: 2rem; }
-.image-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-.gallery-item img { width: 100%; height: 300px; object-fit: cover; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-.gallery-item:hover img { transform: scale(1.03); }
-figcaption { margin-top: 15px; font-style: italic; opacity: 0.8; text-align: center; }
-
-/* Vídeos */
-.video-section { background: var(--primary); color: white; padding: 80px 0; }
-.video-wrapper { border-radius: 20px; overflow: hidden; box-shadow: 0 15px 50px rgba(0,0,0,0.5); margin: 30px 0; }
-.links-flex { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
-.external-link { background: var(--accent); color: #1b3617; padding: 10px 20px; border-radius: 50px; text-decoration: none; font-weight: bold; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.card { background: var(--card-bg); padding: 15px; border-radius: 10px; text-align: center; }
+.card img { width: 100%; border-radius: 8px; margin-bottom: 10px; }
 
 /* Contato */
-.contact-card { background: var(--light-grey); padding: 50px; border-radius: 30px; max-width: 700px; margin: 0 auto; text-align: center; }
-.form-group { margin-bottom: 20px; text-align: left; }
-.form-group label { display: block; margin-bottom: 8px; font-weight: bold; }
-textarea { max-width: 100%; }
-.btn-send { width: 100%; background: var(--primary); color: white; border: none; padding: 15px; border-radius: 10px; font-size: 1.1rem; cursor: pointer; font-weight: bold; }
-.success-box { background: var(--accent); color: #1b3617; padding: 30px; border-radius: 15px; }
+.form-card { background: var(--card-bg); padding: 30px; border-radius: 15px; margin-top: 40px; }
+label { display: block; margin: 10px 0 5px; font-weight: bold; }
+input[type="email"], textarea { width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc; }
+#send-btn { width: 100%; padding: 12px; background: var(--primary); color: white; border: none; border-radius: 5px; font-size: 1rem; cursor: pointer; }
 
-/* Rodapé */
-footer { text-align: center; padding: 50px 0; border-top: 1px solid #ddd; opacity: 0.7; }
+footer { text-align: center; padding: 40px; opacity: 0.7; }
+.hidden { display: none; }
 
-/* Responsividade Celular */
-@media (max-width: 768px) {
-    .nav-links { display: none; }
-    .hero h1 { font-size: 2.2rem; }
-    .input-group { flex-direction: column; align-items: center; }
-    .image-gallery { grid-template-columns: 1fr; }
+@media (max-width: 600px) {
+    .grid { grid-template-columns: 1fr; }
+    input { width: 100%; margin-bottom: 10px; }
 }
