@@ -1,63 +1,44 @@
-// 1. Variáveis de Estado (Processamento de Informação)
-const appState = {
-    userName: "",
-    fontSize: 16
-};
+// 1. Variáveis de estado
+let fSize = 16;
 
-// 2. Seleção de Elementos
-const btnWelcome = document.getElementById('btn-welcome');
-const inputName = document.getElementById('user-name');
-const welcomeArea = document.getElementById('welcome-msg');
-const interactionArea = document.getElementById('user-interact');
+// 2. Seletores de Elementos
 const themeBtn = document.getElementById('theme-btn');
-const fontBtn = document.getElementById('font-up');
+const fontBtn = document.getElementById('font-btn');
+const startBtn = document.getElementById('start-btn');
+const userNameInput = document.getElementById('user-name');
+const welcomeMsg = document.getElementById('welcome-msg');
+const userBox = document.getElementById('user-box');
+const agroForm = document.getElementById('agro-form');
+const feedback = document.getElementById('form-feedback');
 
-// 3. Função: Boas-vindas Personalizada (Manipulação do DOM)
-btnWelcome.addEventListener('click', () => {
-    const rawName = inputName.value.trim();
-    
-    if (rawName.length >= 3) {
-        appState.userName = rawName;
-        // Esconde o formulário e exibe mensagem personalizada
-        interactionArea.classList.add('hidden');
-        welcomeArea.innerHTML = `
-            <div style="padding: 20px; border: 2px solid var(--primary); border-radius: 15px; display: inline-block;">
-                <h3>Seja bem-vindo(a), ${appState.userName}! 🌱</h3>
-                <p>Explore nosso conteúdo e descubra como o agro e a natureza caminham juntos.</p>
-            </div>
-        `;
-        welcomeArea.classList.remove('hidden');
+// 3. Função: Alternar Modo Escuro
+themeBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+});
+
+// 4. Função: Aumentar Fonte (Acessibilidade)
+fontBtn.addEventListener('click', () => {
+    fSize = fSize >= 24 ? 16 : fSize + 2;
+    document.body.style.fontSize = fSize + 'px';
+});
+
+// 5. Função: Personalizar Boas-vindas (Manipulação do DOM)
+startBtn.addEventListener('click', () => {
+    const nome = userNameInput.value.trim();
+    if (nome !== "") {
+        userBox.classList.add('hidden');
+        welcomeMsg.innerHTML = `<h3>Seja bem-vindo(a), ${nome}! 🌱</h3><p>Assista ao documentário abaixo para entender nosso propósito.</p>`;
+        welcomeMsg.classList.remove('hidden');
     } else {
-        alert("Por favor, digite seu nome (mínimo 3 letras).");
+        alert("Por favor, digite seu nome.");
     }
 });
 
-// 4. Função: Modo Escuro (Acessibilidade)
-themeBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    console.log("Usuário alterou o contraste da página.");
-});
-
-// 5. Função: Tamanho de Fonte (Acessibilidade)
-fontBtn.addEventListener('click', () => {
-    appState.fontSize += 2;
-    if (appState.fontSize > 26) appState.fontSize = 16; // Reinicia se ficar muito grande
-    document.documentElement.style.fontSize = appState.baseSize + "px";
-    // Ajuste direto no body para garantir efeito imediato
-    document.body.style.fontSize = appState.fontSize + 'px';
-});
-
-// 6. Função: Formulário de Contato (Interatividade funcional)
-const contactForm = document.getElementById('contact-form');
-const statusMsg = document.getElementById('form-status');
-
-contactForm.addEventListener('submit', (event) => {
-    event.preventDefault(); // Impede o recarregamento da página
-    
-    const email = document.getElementById('email').value;
-    console.log(`Recebendo mensagem de: ${email}`);
-    
-    // Altera o DOM para mostrar sucesso
-    contactForm.classList.add('hidden');
-    statusMsg.classList.remove('hidden');
+// 6. Função: Formulário Interativo
+agroForm.addEventListener('submit', (e) => {
+    e.preventDefault(); // Impede o envio real para fins de demonstração
+    agroForm.classList.add('hidden');
+    feedback.classList.remove('hidden');
+    feedback.style.color = "var(--primary)";
+    feedback.style.fontWeight = "bold";
 });
