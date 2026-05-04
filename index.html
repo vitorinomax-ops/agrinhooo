@@ -1,24 +1,20 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgroSustentável | Futuro em Equilíbrio</title>
+    <title>Agro Forte: Futuro Sustentável</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
         <nav class="navbar container">
-            <div class="logo">Agro<span>Forte</span></div>
-            <ul class="nav-links">
-                <li><a href="#galeria">Imagens</a></li>
-                <li><a href="#midia">Conteúdo</a></li>
-                <li><a href="#contato">Fale Conosco</a></li>
-            </ul>
+            <div class="logo">Agro<span>Sustentável</span></div>
             <div class="accessibility">
-                <button id="theme-btn" title="Modo Escuro">🌓</button>
-                <button id="font-up" title="Aumentar Texto">A+</button>
+                <button id="theme-btn" title="Alternar Modo Escuro">🌓 Tema</button>
+                <button id="font-btn" title="Aumentar Fonte">A+</button>
             </div>
         </nav>
     </header>
@@ -26,86 +22,65 @@
     <main>
         <section class="hero">
             <div class="container">
-                <h1>Tecnologia que Colhe, <br><span>Natureza que Floresce</span></h1>
-                <p>Descubra como o equilíbrio sustenta o Brasil e garante o amanhã.</p>
-                <div id="user-interact" class="user-box">
-                    <label for="user-name">Para começar, qual o seu nome?</label>
-                    <div class="input-group">
-                        <input type="text" id="user-name" placeholder="Ex: Agricultor Consciente">
-                        <button id="btn-welcome">Entrar no Portal</button>
-                    </div>
+                <h1>O Equilíbrio entre <br><span>Produção e Natureza</span></h1>
+                <p>O agronegócio moderno utiliza a tecnologia para alimentar o mundo preservando o amanhã.</p>
+                
+                <div id="user-box" class="interactive-area">
+                    <input type="text" id="user-name" placeholder="Digite seu nome...">
+                    <button id="start-btn">Acessar Conteúdo</button>
                 </div>
                 <div id="welcome-msg" class="hidden"></div>
             </div>
         </section>
 
-        <section id="galeria" class="container section-padding">
-            <h2 class="section-title">O Agro Sustentável em Foco</h2>
-            <div class="image-gallery">
-                <figure class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&q=80&w=800" alt="Agricultura tecnológica">
-                    <figcaption>Inovação: Sensores de solo que reduzem o uso de água.</figcaption>
-                </figure>
-                <figure class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&q=80&w=800" alt="Plantação verde">
-                    <figcaption>Preservação: O plantio direto evita a erosão da terra.</figcaption>
-                </figure>
+        <section class="video-section container">
+            <h2 class="section-title">Documentário: Agro Sustentável</h2>
+            <div class="video-container">
+                <iframe 
+                    width="100%" 
+                    height="500" 
+                    src="https://www.youtube.com/embed/WdVAxpc5RXA" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
             </div>
         </section>
 
-        <section id="midia" class="video-section">
-            <div class="container">
-                <h2 class="section-title white-text">Conhecimento que Alimenta</h2>
-                <div class="video-wrapper">
-                    <iframe width="100%" height="450" 
-                        src="https://www.youtube.com/embed/5F_fB8p78vU" 
-                        title="Vídeo Embrapa Agricultura Sustentável" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
+        <section class="gallery container">
+            <h2 class="section-title">Tecnologia no Campo</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&q=80&w=500" alt="Drones no campo">
+                    <p>Drones para monitoramento de safras.</p>
                 </div>
-                <div class="extra-content">
-                    <h3>Explore Fontes Oficiais:</h3>
-                    <div class="links-flex">
-                        <a href="https://www.embrapa.br" target="_blank" class="external-link">Embrapa ↗</a>
-                        <a href="https://www.sistemafaep.org.br" target="_blank" class="external-link">Sistema FAEP/SENAR ↗</a>
-                        <a href="https://www.gov.br/agricultura/pt-br" target="_blank" class="external-link">Ministério da Agricultura ↗</a>
-                    </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&q=80&w=500" alt="Irrigação">
+                    <p>Irrigação inteligente de precisão.</p>
                 </div>
             </div>
         </section>
 
-        <section id="contato" class="container section-padding">
-            <div class="contact-card">
+        <section class="contact container">
+            <div class="form-card">
                 <h2>Fale Conosco</h2>
-                <p>Dúvidas ou sugestões para um futuro mais verde?</p>
-                <form id="contact-form">
-                    <div class="form-group">
-                        <label for="email">Seu E-mail:</label>
-                        <input type="email" id="email" placeholder="nome@email.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="msg">Mensagem:</label>
-                        <textarea id="msg" rows="4" placeholder="Sua ideia para o Agrinho..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn-send">Enviar para Nossa Equipe</button>
+                <form id="agro-form">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" required placeholder="seu@email.com">
+                    
+                    <label for="message">Sua Mensagem:</label>
+                    <textarea id="message" rows="4" required placeholder="Como podemos melhorar o agro?"></textarea>
+                    
+                    <button type="submit" id="send-btn">Enviar Mensagem</button>
                 </form>
-                <div id="form-status" class="hidden">
-                    <div class="success-box">
-                        <h3>Mensagem Enviada!</h3>
-                        <p>Obrigado por contribuir com um futuro sustentável.</p>
-                    </div>
-                </div>
+                <div id="form-feedback" class="hidden">Mensagem enviada com sucesso! 🌱</div>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="container">
-            <p><strong>Projeto Agrinho 2026</strong> - Agro Forte e Futuro Sustentável</p>
-            <p>Desenvolvido para fins educativos e de conscientização ambiental.</p>
-        </div>
+        <p>&copy; 2026 Projeto Agrinho - Cultivando um Futuro Sustentável</p>
     </footer>
 
     <script src="script.js"></script>
