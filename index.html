@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal AgroSustentável | Inovação e Natureza</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar container">
+            <div class="logo">Agro<span>Forte</span></div>
+            <ul class="nav-links">
+                <li><a href="#artigos">Artigos</a></li>
+                <li><a href="#midia">Mídia</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <div class="accessibility">
+                <button id="theme-btn" title="Modo Escuro">🌓</button>
+                <button id="font-up">A+</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Tecnologia que Colhe, <br><span>Natureza que Floresce</span></h1>
+                <p>O equilíbrio perfeito entre a mesa do brasileiro e a preservação do nosso solo.</p>
+                <div id="user-interact">
+                    <input type="text" id="user-name" placeholder="Como podemos te chamar?">
+                    <button id="btn-welcome">Entrar no Portal</button>
+                </div>
+                <div id="welcome-msg" class="hidden"></div>
+            </div>
+        </section>
+
+        <section class="container section-padding">
+            <h2 class="section-title">O Agro em Imagens</h2>
+            <div class="image-gallery">
+                <figure>
+                    <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&q=80&w=800" alt="Trator com tecnologia GPS">
+                    <figcaption>Agricultura de Precisão: Redução de desperdício via GPS.</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=800" alt="Plantação verde">
+                    <figcaption>Recuperação de Pastagens: O verde que sequestra carbono.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section id="midia" class="video-section">
+            <div class="container">
+                <h2 class="section-title">Central Multimídia</h2>
+                <div class="video-container">
+                    <iframe width="100%" height="450" src="https://www.youtube.com/embed/33wT86yC-zM" title="Agro Sustentável" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="external-links">
+                    <h3>Sites Recomendados para Estudo:</h3>
+                    <ul>
+                        <li><a href="https://www.embrapa.br" target="_blank">Embrapa - Referência em Pesquisa Agropecuária</a></li>
+                        <li><a href="https://www.sistemafaep.org.br" target="_blank">Sistema FAEP/SENAR - Portal do Agrinho</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="container section-padding">
+            <div class="contact-card">
+                <h2>Fale Conosco</h2>
+                <p>Dúvidas sobre o projeto Agrinho ou sugestões sustentáveis?</p>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="email">Seu E-mail:</label>
+                        <input type="email" id="email" placeholder="email@exemplo.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="msg">Mensagem:</label>
+                        <textarea id="msg" rows="4" placeholder="Sua dúvida ou comentário..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-send">Enviar Mensagem</button>
+                </form>
+                <div id="form-status" class="hidden">Mensagem enviada com sucesso!</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p><strong>Projeto Agrinho 2026</strong> | Equilíbrio entre Produção e Meio Ambiente</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
