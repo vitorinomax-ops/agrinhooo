@@ -3,82 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgroSustentável | Futuro em Equilíbrio</title>
+    <title>AgroSustentável | Oficial</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <nav class="navbar container">
+    <header class="navbar">
+        <div class="container flex-nav">
             <div class="logo">Agro<span>Forte</span></div>
-            <div class="controls">
-                <button id="theme-btn" title="Modo Escuro">🌓</button>
-                <button id="font-up" title="Aumentar Texto">A+</button>
+            <div class="btns">
+                <button id="theme-btn">🌓 Tema</button>
+                <button id="font-btn">A+</button>
             </div>
-        </nav>
+        </div>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="container hero-content">
-                <h1>Produção Forte, <br><span>Natureza Preservada</span></h1>
-                <p>O equilíbrio que sustenta o Brasil e alimenta o mundo através da tecnologia verde.</p>
-                
-                <div id="interaction-box" class="form-group">
-                    <label for="user-name">Para uma experiência personalizada, digite seu nome:</label>
-                    <div class="input-group">
-                        <input type="text" id="user-name" placeholder="Ex: Agricultor Consciente">
-                        <button id="main-action">Explorar Portal</button>
-                    </div>
-                </div>
-                <div id="display-welcome" class="welcome-card hidden"></div>
+        <section class="hero container">
+            <h1>Tecnologia e <span>Natureza</span></h1>
+            <p>O equilíbrio que alimenta o mundo.</p>
+            <div id="user-area">
+                <input type="text" id="user-name" placeholder="Seu nome...">
+                <button id="main-action">Entrar</button>
             </div>
+            <div id="welcome-msg" class="hidden"></div>
         </section>
 
-        <section class="video-section">
+        <section class="video-box">
             <div class="container">
-                <h2 class="section-title white-text">Conhecimento Multimídia</h2>
-                <div class="video-wrapper">
-                    <iframe 
-                        width="100%" 
-                        height="500" 
-                        src="https://www.youtube.com/embed/WdVAxpc5RXA" 
-                        title="Documentário Agro Sustentável" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        allowfullscreen>
-                    </iframe>
+                <div class="responsive-video">
+                    <iframe src="https://www.youtube.com/embed/WdVAxpc5RXA" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
         </section>
 
-        <section class="container section-padding">
-            <h2 class="section-title">Inovação no Campo</h2>
-            <div class="cards-grid">
-                <article class="card">
-                    <div class="card-icon">💧</div>
-                    <h3>Gestão Hídrica</h3>
-                    <p>Sistemas de irrigação de precisão que economizam até 40% de água nas lavouras.</p>
-                </article>
-                <article class="card">
-                    <div class="card-icon">🛰️</div>
-                    <h3>Monitoramento🛰️</h3>
-                    <p>Uso de satélites e drones para garantir o cumprimento das leis ambientais.</p>
-                </article>
-                <article class="card">
-                    <div class="card-icon">♻️</div>
-                    <h3>Bioinsumos♻️</h3>
-                    <p>Uso de micro-organismos naturais para fertilizar e proteger a plantação.</p>
-                </article>
+        <section class="container content-grid">
+            <div class="card">
+                <h3>💧 Água</h3>
+                <p>Uso inteligente e preservação de nascentes.</p>
+            </div>
+            <div class="card">
+                <h3>🛰️ Drones</h3>
+                <p>Monitoramento de precisão via satélite.</p>
+            </div>
+            <div class="card">
+                <h3>🌱 Solo</h3>
+                <p>Recuperação de áreas degradadas.</p>
             </div>
         </section>
-
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Projeto Agrinho - Tecnologia e Sustentabilidade</p>
-        </div>
+    <footer class="container">
+        <p>Projeto Agrinho 2026</p>
     </footer>
 
     <script src="script.js"></script>
