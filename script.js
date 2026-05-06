@@ -1,16 +1,13 @@
-// Modo Escuro
 document.getElementById('theme-btn').onclick = () => {
     document.body.classList.toggle('dark-mode');
 };
 
-// Fonte
 let size = 16;
 document.getElementById('font-btn').onclick = () => {
     size = size > 24 ? 16 : size + 2;
     document.body.style.fontSize = size + 'px';
 };
 
-// Boas-vindas
 document.getElementById('main-action').onclick = () => {
     const nome = document.getElementById('user-name').value;
     if (nome) {
