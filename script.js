@@ -1,42 +1,42 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const btnStart = document.getElementById('btn-start');
-    const inputName = document.getElementById('user-name');
-    const userArea = document.getElementById('user-area');
-    const themeToggle = document.getElementById('theme-toggle');
-
-    // 1. Alternância de Tema Profissional
-    themeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        const isDark = document.body.classList.contains('dark-mode');
-        themeToggle.innerText = isDark ? '☀️' : '🌓';
+    
+    // 1. Lógica do Acordeão (FAQ)
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+    accordionHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const item = header.parentElement;
+            item.classList.toggle('active');
+            header.querySelector('span').innerText = item.classList.contains('active') ? '-' : '+';
+        });
     });
 
-    // 2. Manipulação Dinâmica do Usuário
-    btnStart.addEventListener('click', () => {
-        const name = inputName.value.trim();
-        if (name) {
-            userArea.innerHTML = `
-                <div class="welcome-banner">
-                    <h3>Bem-vindo ao Futuro, ${name}! 🌱</h3>
-                    <p>Explore as inovações que preparamos para você.</p>
-                </div>
-            `;
-            userArea.style.animation = "fadeInUp 0.6s ease forwards";
-        } else {
-            inputName.style.borderColor = "red";
-            setTimeout(() => inputName.style.borderColor = "#ddd", 2000);
-        }
+    // 2. Lógica de Filtro da Galeria
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.feature-card');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Mudar botão ativo
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filter = btn.getAttribute('data-filter');
+
+            cards.forEach(card => {
+                if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                    card.style.display = 'block';
+                    card.style.animation = 'fadeIn 0.5s ease';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
     });
 
-    // 3. Efeito de Scroll no Header
-    window.addEventListener('scroll', () => {
-        const header = document.getElementById('header');
-        if (window.scrollY > 50) {
-            header.style.padding = "10px 0";
-            header.style.boxShadow = "0 5px 20px rgba(0,0,0,0.1)";
-        } else {
-            header.style.padding = "15px 0";
-            header.style.boxShadow = "none";
-        }
+    // 3. Botão "Ver Mais" - Alerta Simples (Pode ser um modal)
+    document.querySelectorAll('.btn-more').forEach(btn => {
+        btn.addEventListener('click', () => {
+            alert("Em breve: Detalhes técnicos sobre esta inovação!");
+        });
     });
 });
