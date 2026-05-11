@@ -1,19 +1,15 @@
-document.getElementById('theme-btn').onclick = () => {
-    document.body.classList.toggle('dark-mode');
-};
-
-let size = 16;
-document.getElementById('font-btn').onclick = () => {
-    size = size > 24 ? 16 : size + 2;
-    document.body.style.fontSize = size + 'px';
-};
-
-document.getElementById('main-action').onclick = () => {
+document.getElementById('btn-explore').onclick = function() {
     const nome = document.getElementById('user-name').value;
-    if (nome) {
-        document.getElementById('user-area').classList.add('hidden');
-        const msg = document.getElementById('welcome-msg');
-        msg.innerHTML = `<h3>Bem-vindo, ${nome}! 🌱</h3>`;
-        msg.classList.remove('hidden');
+    const msgArea = document.getElementById('welcome-msg');
+    const searchBox = document.querySelector('.search-box');
+
+    if (nome.trim() !== "") {
+        searchBox.classList.add('hidden');
+        msgArea.innerHTML = `<h3>Seja bem-vindo, ${nome}! 🌿</h3>`;
+        msgArea.classList.remove('hidden');
+        msgArea.style.marginTop = "20px";
+        msgArea.style.color = "#1b3626";
+    } else {
+        alert("Por favor, digite seu nome.");
     }
 };
