@@ -3,70 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agro Forte | Tecnologia e Natureza</title>
+    <title>Agro Forte | Futuro Sustentável</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header class="navbar">
-        <div class="container flex-nav">
-            <div class="logo">Agro<span>Forte</span></div>
-            <div class="btns">
-                <button id="theme-btn" class="btn-icon">🌓</button>
-                <button id="font-btn" class="btn-icon">A+</button>
+    <header class="header">
+        <nav class="container nav-bar">
+            <div class="logo">
+                <span class="icon">🚜</span> 
+                <div>
+                    <strong>Agro Forte:</strong>
+                    <span>Futuro Sustentável</span>
+                </div>
             </div>
-        </div>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Início</a></li>
+                <li><a href="#">Sobre Nós</a></li>
+                <li><a href="#">Inovação</a></li>
+                <li><a href="#">Sustentabilidade</a></li>
+                <li><a href="#">Educação</a></li>
+                <li><a href="#">Fale Conosco</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main>
-        <section class="hero container">
-            <h1>Tecnologia e Natureza em <span>Harmonia</span></h1>
-            <p>Conheça o futuro do agronegócio sustentável e produtivo.</p>
-            <div id="user-area" class="user-box">
-                <input type="text" id="user-name" placeholder="Digite seu nome...">
-                <button id="main-action">Explorar</button>
+    <main class="container">
+        <section class="hero">
+            <h1>Tecnologia e Natureza em Harmonia</h1>
+            <p>Conheça o Futuro do Agronegócio Sustentável e Produtivo</p>
+            <div class="search-box">
+                <input type="text" id="user-name" placeholder="Seu nome...">
+                <button id="btn-explore">Explorar</button>
             </div>
             <div id="welcome-msg" class="hidden"></div>
         </section>
 
-        <section class="container">
-            <div class="image-row">
-                <div class="image-card">
-                    <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&q=80&w=600" alt="Drones">
-                    <div class="card-label">Monitoramento Aéreo</div>
-                </div>
-                <div class="image-card">
-                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&q=80&w=600" alt="Irrigação">
-                    <div class="card-label">Irrigação de Precisão</div>
-                </div>
-                <div class="image-card">
-                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=600" alt="Energia">
-                    <div class="card-label">Energia Limpa</div>
-                </div>
-                <div class="image-card">
-                    <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&q=80&w=600" alt="Maquinas">
-                    <div class="card-label">Automação e Cuidado</div>
-                </div>
+        <section class="gallery">
+            <div class="img-card">
+                <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&q=80&w=400" alt="Drones">
+                <span class="label">Monitoramento Aéreo Inteligente</span>
+            </div>
+            <div class="img-card">
+                <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&q=80&w=400" alt="Irrigação">
+                <span class="label">Irrigação de Precisão</span>
+            </div>
+            <div class="img-card">
+                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=400" alt="Energia">
+                <span class="label">Energia Limpa e Alimento</span>
+            </div>
+            <div class="img-card">
+                <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=400" alt="Automação">
+                <span class="label">Automação e Cuidado</span>
+            </div>
+            <div class="img-card">
+                <img src="https://images.unsplash.com/photo-1532187875605-186c7384166a?auto=format&fit=crop&q=80&w=400" alt="Pesquisa">
+                <span class="label">Pesquisa e Inovação</span>
             </div>
         </section>
 
         <section class="video-section">
-            <div class="container">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/WdVAxpc5RXA" frameborder="0" allowfullscreen></iframe>
-                </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/WdVAxpc5RXA" frameborder="0" allowfullscreen></iframe>
             </div>
         </section>
 
-        <section class="container info-row">
-            <div class="info-pill">💧 <strong>Gestão Hídrica:</strong> Uso sustentável da água.</div>
-            <div class="info-pill">🛰️ <strong>Agricultura de Dados:</strong> Monitoramento real.</div>
-            <div class="info-pill">🌱 <strong>Solo Saudável:</strong> Regeneração e nutrição.</div>
+        <section class="info-grid">
+            <div class="info-card">
+                <span class="info-icon">💧</span>
+                <div>
+                    <strong>Gestão Hídrica:</strong>
+                    <span>Uso Eficiente e Sustentável da Água</span>
+                </div>
+            </div>
+            <div class="info-card">
+                <span class="info-icon">🛰️</span>
+                <div>
+                    <strong>Agricultura de Precisão:</strong>
+                    <span>Monitoramento por Dados</span>
+                </div>
+            </div>
+            <div class="info-card">
+                <span class="info-icon">🌱</span>
+                <div>
+                    <strong>Solo Saudável:</strong>
+                    <span>Regeneração e Nutrição do Solo</span>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer class="footer">
-        <p>© Agro Forte: Futuro Sustentável</p>
+        <div class="container footer-content">
+            <p>© Agro Forte: Futuro Sustentável</p>
+            <div class="social-icons">📸 𝕏 ▶</div>
+        </div>
     </footer>
 
     <script src="script.js"></script>
