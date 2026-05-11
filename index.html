@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portal Agrinho 2026 - Inovação e Sustentabilidade no Campo">
-    <title>Agro Forte | Futuro Sustentável 2026</title>
+    <title>AgroForte Pro | Agrinho 2026</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
@@ -12,98 +11,75 @@
 
     <header class="navbar" id="header">
         <div class="container nav-content">
-            <div class="logo">
-                <div class="logo-icon">🌱</div>
-                <div class="logo-text">
-                    <strong>AGRO FORTE</strong>
-                    <span>Agrinho 2026</span>
-                </div>
-            </div>
+            <div class="logo"><strong>AGRO<span>PRO</span></strong></div>
             <nav class="nav-links">
-                <a href="#home" class="active">Home</a>
-                <a href="#tecnologia">Tecnologia</a>
-                <a href="#sustentavel">Sustentabilidade</a>
-                <a href="#contato">Contato</a>
+                <a href="#home">Home</a>
+                <a href="#tecnologia">Tecnologias</a>
+                <a href="#faq">Dúvidas</a>
+                <a href="#contato" class="btn-nav">Fale Conosco</a>
             </nav>
-            <div class="nav-actions">
-                <button id="theme-toggle" class="btn-icon" title="Trocar Tema">🌓</button>
-            </div>
+            <button id="theme-toggle">🌓</button>
         </div>
     </header>
 
     <main>
-        <section id="home" class="hero">
-            <div class="container hero-grid">
-                <div class="hero-text">
-                    <span class="badge">Inovação Rural</span>
-                    <h1>Tecnologia que Colhe, <br><span>Natureza que Floresce</span></h1>
-                    <p>O equilíbrio entre produtividade e preservação é o motor do agronegócio do futuro.</p>
-                    <div class="user-interaction" id="user-area">
-                        <input type="text" id="user-name" placeholder="Como devemos te chamar?">
-                        <button id="btn-start" class="btn-primary">Entrar no Portal</button>
-                    </div>
-                </div>
-                <div class="hero-stats">
-                    <div class="stat-card"><strong>+35%</strong> <p>Produtividade</p></div>
-                    <div class="stat-card"><strong>-20%</strong> <p>Uso de Água</p></div>
-                </div>
-            </div>
+        <section id="home" class="hero container">
+            <h1>O Campo na <br><span>Era Digital</span></h1>
+            <p>Explore as ferramentas que estão transformando o Agrinho 2026.</p>
         </section>
 
         <section id="tecnologia" class="container section-padding">
-            <div class="section-header">
-                <h2>Tecnologias do Campo</h2>
-                <p>O futuro já chegou às lavouras brasileiras.</p>
+            <div class="filter-controls">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="maquinas">Máquinas</button>
+                <button class="filter-btn" data-filter="digital">Software</button>
+                <button class="filter-btn" data-filter="sustentavel">Sustentável</button>
             </div>
-            <div class="gallery-grid">
-                <article class="feature-card">
-                    <div class="img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&q=80&w=500" alt="Drones">
-                    </div>
-                    <div class="card-content">
-                        <h3>Monitoramento Aéreo</h3>
-                        <p>Drones com sensores multiespectrais identificam pragas antes do olho humano.</p>
-                    </div>
-                </article>
-                <article class="feature-card">
-                    <div class="img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&q=80&w=500" alt="Irrigação">
-                    </div>
-                    <div class="card-content">
-                        <h3>Irrigação Inteligente</h3>
-                        <p>Sensores de solo que liberam água apenas quando a planta realmente precisa.</p>
+
+            <div class="gallery-grid" id="gallery">
+                <article class="feature-card" data-category="maquinas">
+                    <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&q=80&w=400" alt="Drone">
+                    <div class="card-body">
+                        <span>Máquinas</span>
+                        <h3>Drones Pulverizadores</h3>
+                        <button class="btn-more">Ver detalhes</button>
                     </div>
                 </article>
-                <article class="feature-card">
-                    <div class="img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=500" alt="Energia Solar">
+
+                <article class="feature-card" data-category="digital">
+                    <img src="https://images.unsplash.com/photo-1558444479-c848512186c0?auto=format&fit=crop&q=80&w=400" alt="Software">
+                    <div class="card-body">
+                        <span>Digital</span>
+                        <h3>IA na Safra</h3>
+                        <button class="btn-more">Ver detalhes</button>
                     </div>
-                    <div class="card-content">
-                        <h3>Energia Limpa</h3>
-                        <p>Fazendas solares alimentando operações com pegada de carbono zero.</p>
+                </article>
+
+                <article class="feature-card" data-category="sustentavel">
+                    <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&q=80&w=400" alt="Sustentável">
+                    <div class="card-body">
+                        <span>Sustentável</span>
+                        <h3>Horta Vertical</h3>
+                        <button class="btn-more">Ver detalhes</button>
                     </div>
                 </article>
             </div>
         </section>
 
-        <section class="video-highlight">
-            <div class="container">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/WdVAxpc5RXA" frameborder="0" allowfullscreen></iframe>
+        <section id="faq" class="container section-padding">
+            <h2 class="title">Perguntas Frequentes</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">O que é a Agricultura 4.0? <span>+</span></button>
+                    <div class="accordion-body">É o uso de tecnologia de ponta, como sensores e IA, para otimizar a produção.</div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">Como o Agrinho ajuda no campo? <span>+</span></button>
+                    <div class="accordion-body">Levando educação e inovação para as novas gerações de produtores.</div>
                 </div>
             </div>
         </section>
     </main>
-
-    <footer class="footer">
-        <div class="container footer-grid">
-            <p>&copy; 2026 Agro Forte - Desenvolvido para o Agrinho 2026</p>
-            <div class="footer-links">
-                <a href="#">Privacidade</a>
-                <a href="#">Termos</a>
-            </div>
-        </div>
-    </footer>
 
     <script src="script.js"></script>
 </body>
