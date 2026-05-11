@@ -3,100 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agro Forte | Futuro Sustentável</title>
+    <meta name="description" content="Portal Agrinho 2026 - Inovação e Sustentabilidade no Campo">
+    <title>Agro Forte | Futuro Sustentável 2026</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header class="header">
-        <nav class="container nav-bar">
+    <header class="navbar" id="header">
+        <div class="container nav-content">
             <div class="logo">
-                <span class="logo-icon">🌿</span> 
+                <div class="logo-icon">🌱</div>
                 <div class="logo-text">
-                    <strong>Agro Forte</strong>
-                    <span>Futuro Sustentável</span>
+                    <strong>AGRO FORTE</strong>
+                    <span>Agrinho 2026</span>
                 </div>
             </div>
-            <ul class="nav-links">
-                <li><a href="#inicio" class="active">Início</a></li>
-                <li><a href="#inovacao">Inovação</a></li>
-                <li><a href="#sustentabilidade">Sustentabilidade</a></li>
-                <li><a href="#contato">Fale Conosco</a></li>
-            </ul>
-        </nav>
+            <nav class="nav-links">
+                <a href="#home" class="active">Home</a>
+                <a href="#tecnologia">Tecnologia</a>
+                <a href="#sustentavel">Sustentabilidade</a>
+                <a href="#contato">Contato</a>
+            </nav>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="btn-icon" title="Trocar Tema">🌓</button>
+            </div>
+        </div>
     </header>
 
-    <main class="container">
-        <section id="inicio" class="hero">
-            <h1>Tecnologia e Natureza em Harmonia</h1>
-            <p>Conheça o futuro do agronegócio sustentável, eficiente e produtivo.</p>
-            <div class="search-box">
-                <input type="text" id="user-name" placeholder="Como quer ser chamado?">
-                <button id="btn-explore">Explorar Portal</button>
-            </div>
-            <div id="welcome-msg" class="hidden"></div>
-        </section>
-
-        <section id="inovacao" class="gallery">
-            <article class="img-card">
-                <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&q=80&w=400" alt="Drones">
-                <div class="label">Monitoramento Aéreo</div>
-            </article>
-            <article class="img-card">
-                <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&q=80&w=400" alt="Irrigação">
-                <div class="label">Irrigação de Precisão</div>
-            </article>
-            <article class="img-card">
-                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=400" alt="Energia">
-                <div class="label">Energia Renovável</div>
-            </article>
-            <article class="img-card">
-                <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=400" alt="Automação">
-                <div class="label">Automação Inteligente</div>
-            </article>
-            <article class="img-card">
-                <img src="https://images.unsplash.com/photo-1532187875605-186c7384166a?auto=format&fit=crop&q=80&w=400" alt="Pesquisa">
-                <div class="label">Bio-Tecnologia</div>
-            </article>
-        </section>
-
-        <section class="video-section">
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/WdVAxpc5RXA" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </section>
-
-        <section id="sustentabilidade" class="info-grid">
-            <div class="info-card">
-                <span class="info-icon">💧</span>
-                <div class="info-text">
-                    <strong>Gestão Hídrica</strong>
-                    <p>Uso inteligente e circular da água.</p>
+    <main>
+        <section id="home" class="hero">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <span class="badge">Inovação Rural</span>
+                    <h1>Tecnologia que Colhe, <br><span>Natureza que Floresce</span></h1>
+                    <p>O equilíbrio entre produtividade e preservação é o motor do agronegócio do futuro.</p>
+                    <div class="user-interaction" id="user-area">
+                        <input type="text" id="user-name" placeholder="Como devemos te chamar?">
+                        <button id="btn-start" class="btn-primary">Entrar no Portal</button>
+                    </div>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-card"><strong>+35%</strong> <p>Produtividade</p></div>
+                    <div class="stat-card"><strong>-20%</strong> <p>Uso de Água</p></div>
                 </div>
             </div>
-            <div class="info-card">
-                <span class="info-icon">📊</span>
-                <div class="info-text">
-                    <strong>Agro Digital</strong>
-                    <p>Decisões baseadas em dados reais.</p>
-                </div>
+        </section>
+
+        <section id="tecnologia" class="container section-padding">
+            <div class="section-header">
+                <h2>Tecnologias do Campo</h2>
+                <p>O futuro já chegou às lavouras brasileiras.</p>
             </div>
-            <div class="info-card">
-                <span class="info-icon">🌳</span>
-                <div class="info-text">
-                    <strong>Carbono Zero</strong>
-                    <p>Produção focada em regeneração.</p>
+            <div class="gallery-grid">
+                <article class="feature-card">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&q=80&w=500" alt="Drones">
+                    </div>
+                    <div class="card-content">
+                        <h3>Monitoramento Aéreo</h3>
+                        <p>Drones com sensores multiespectrais identificam pragas antes do olho humano.</p>
+                    </div>
+                </article>
+                <article class="feature-card">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&q=80&w=500" alt="Irrigação">
+                    </div>
+                    <div class="card-content">
+                        <h3>Irrigação Inteligente</h3>
+                        <p>Sensores de solo que liberam água apenas quando a planta realmente precisa.</p>
+                    </div>
+                </article>
+                <article class="feature-card">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=500" alt="Energia Solar">
+                    </div>
+                    <div class="card-content">
+                        <h3>Energia Limpa</h3>
+                        <p>Fazendas solares alimentando operações com pegada de carbono zero.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="video-highlight">
+            <div class="container">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/WdVAxpc5RXA" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <div class="container footer-content">
-            <p>© 2026 Agro Forte - Projeto Agrinho</p>
-            <div class="social-links">
-                <span>Instagram</span> • <span>YouTube</span> • <span>LinkedIn</span>
+        <div class="container footer-grid">
+            <p>&copy; 2026 Agro Forte - Desenvolvido para o Agrinho 2026</p>
+            <div class="footer-links">
+                <a href="#">Privacidade</a>
+                <a href="#">Termos</a>
             </div>
         </div>
     </footer>
