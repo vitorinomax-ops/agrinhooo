@@ -3,79 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgroForte Pro | Agrinho 2026</title>
+    <title>AgroPro 2026 | Ecossistema Digital</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header class="navbar" id="header">
+    <header class="navbar">
         <div class="container nav-content">
-            <div class="logo"><strong>AGRO<span>PRO</span></strong></div>
+            <div class="logo">AGRO<span>PRO</span></div>
             <nav class="nav-links">
-                <a href="#home">Home</a>
+                <a href="#galeria">Mídia</a>
                 <a href="#tecnologia">Tecnologias</a>
-                <a href="#faq">Dúvidas</a>
-                <a href="#contato" class="btn-nav">Fale Conosco</a>
+                <a href="#contato" class="btn-nav">Portal do Produtor</a>
             </nav>
-            <button id="theme-toggle">🌓</button>
+            <button id="theme-toggle" aria-label="Alternar tema">
+                <span class="icon-sun">☀️</span>
+                <span class="icon-moon">🌙</span>
+            </button>
         </div>
     </header>
 
     <main>
-        <section id="home" class="hero container">
-            <h1>O Campo na <br><span>Era Digital</span></h1>
-            <p>Explore as ferramentas que estão transformando o Agrinho 2026.</p>
+        <section class="hero container">
+            <h1>Inteligência que <br><span class="gradient-text">Alimenta o Mundo</span></h1>
+            <p>Conectando dados, máquinas e natureza no projeto Agrinho 2026.</p>
         </section>
 
-        <section id="tecnologia" class="container section-padding">
-            <div class="filter-controls">
-                <button class="filter-btn active" data-filter="all">Todos</button>
-                <button class="filter-btn" data-filter="maquinas">Máquinas</button>
-                <button class="filter-btn" data-filter="digital">Software</button>
-                <button class="filter-btn" data-filter="sustentavel">Sustentável</button>
-            </div>
-
-            <div class="gallery-grid" id="gallery">
-                <article class="feature-card" data-category="maquinas">
-                    <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&q=80&w=400" alt="Drone">
-                    <div class="card-body">
-                        <span>Máquinas</span>
-                        <h3>Drones Pulverizadores</h3>
-                        <button class="btn-more">Ver detalhes</button>
-                    </div>
-                </article>
-
-                <article class="feature-card" data-category="digital">
-                    <img src="https://images.unsplash.com/photo-1558444479-c848512186c0?auto=format&fit=crop&q=80&w=400" alt="Software">
-                    <div class="card-body">
-                        <span>Digital</span>
-                        <h3>IA na Safra</h3>
-                        <button class="btn-more">Ver detalhes</button>
-                    </div>
-                </article>
-
-                <article class="feature-card" data-category="sustentavel">
-                    <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&q=80&w=400" alt="Sustentável">
-                    <div class="card-body">
-                        <span>Sustentável</span>
-                        <h3>Horta Vertical</h3>
-                        <button class="btn-more">Ver detalhes</button>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <section id="faq" class="container section-padding">
-            <h2 class="title">Perguntas Frequentes</h2>
-            <div class="accordion">
-                <div class="accordion-item">
-                    <button class="accordion-header">O que é a Agricultura 4.0? <span>+</span></button>
-                    <div class="accordion-body">É o uso de tecnologia de ponta, como sensores e IA, para otimizar a produção.</div>
+        <section id="galeria" class="container section-padding">
+            <h2 class="section-title">Ecossistema em Foco</h2>
+            <div class="media-grid">
+                <div class="media-item video-wide">
+                    <iframe src="https://www.youtube.com/embed/WdVAxpc5RXA" title="Agro Sustentável" frameborder="0" allowfullscreen></iframe>
                 </div>
-                <div class="accordion-item">
-                    <button class="accordion-header">Como o Agrinho ajuda no campo? <span>+</span></button>
-                    <div class="accordion-body">Levando educação e inovação para as novas gerações de produtores.</div>
+                
+                <div class="media-item">
+                    <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?auto=format&fit=crop&q=80&w=600" alt="Plantação tecnológica">
+                    <div class="overlay"><span>Bio-Tech</span></div>
+                </div>
+                <div class="media-item">
+                    <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&q=80&w=600" alt="Maquinário moderno">
+                    <div class="overlay"><span>Automação</span></div>
+                </div>
+                <div class="media-item">
+                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&q=80&w=600" alt="Irrigação">
+                    <div class="overlay"><span>Sustentabilidade</span></div>
                 </div>
             </div>
         </section>
