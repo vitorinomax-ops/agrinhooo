@@ -1,36 +1,42 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const btnExplore = document.getElementById('btn-explore');
+    const btnStart = document.getElementById('btn-start');
     const inputName = document.getElementById('user-name');
-    const welcomeMsg = document.getElementById('welcome-msg');
-    const searchBox = document.querySelector('.search-box');
+    const userArea = document.getElementById('user-area');
+    const themeToggle = document.getElementById('theme-toggle');
 
-    // 1. Função de Boas-vindas com animação
-    btnExplore.addEventListener('click', () => {
-        const nome = inputName.value.trim();
+    // 1. Alternância de Tema Profissional
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        const isDark = document.body.classList.contains('dark-mode');
+        themeToggle.innerText = isDark ? '☀️' : '🌓';
+    });
 
-        if (nome !== "") {
-            searchBox.style.opacity = '0';
-            setTimeout(() => {
-                searchBox.classList.add('hidden');
-                welcomeMsg.innerHTML = `<h3>Seja bem-vindo, ${nome}! 🌿</h3>`;
-                welcomeMsg.classList.remove('hidden');
-                welcomeMsg.style.animation = 'fadeInUp 0.8s ease forwards';
-            }, 400);
+    // 2. Manipulação Dinâmica do Usuário
+    btnStart.addEventListener('click', () => {
+        const name = inputName.value.trim();
+        if (name) {
+            userArea.innerHTML = `
+                <div class="welcome-banner">
+                    <h3>Bem-vindo ao Futuro, ${name}! 🌱</h3>
+                    <p>Explore as inovações que preparamos para você.</p>
+                </div>
+            `;
+            userArea.style.animation = "fadeInUp 0.6s ease forwards";
         } else {
-            inputName.style.border = '2px solid #ff4d4d';
-            setTimeout(() => inputName.style.border = 'none', 2000);
+            inputName.style.borderColor = "red";
+            setTimeout(() => inputName.style.borderColor = "#ddd", 2000);
         }
     });
 
-    // 2. Animação de entrada dos cards (Scroll Reveal simples)
-    const cards = document.querySelectorAll('.img-card');
-    cards.forEach((card, index) => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        setTimeout(() => {
-            card.style.transition = 'all 0.6s ease';
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-        }, 100 * index);
+    // 3. Efeito de Scroll no Header
+    window.addEventListener('scroll', () => {
+        const header = document.getElementById('header');
+        if (window.scrollY > 50) {
+            header.style.padding = "10px 0";
+            header.style.boxShadow = "0 5px 20px rgba(0,0,0,0.1)";
+        } else {
+            header.style.padding = "15px 0";
+            header.style.boxShadow = "none";
+        }
     });
 });
