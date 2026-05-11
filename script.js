@@ -1,42 +1,43 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // 1. Lógica do Acordeão (FAQ)
-    const accordionHeaders = document.querySelectorAll('.accordion-header');
-    accordionHeaders.forEach(header => {
-        header.addEventListener('click', () => {
-            const item = header.parentElement;
-            item.classList.toggle('active');
-            header.querySelector('span').innerText = item.classList.contains('active') ? '-' : '+';
-        });
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // 1. Checar preferência salva no navegador
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        body.classList.add(savedTheme);
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        // Se não tiver salvo, checa a preferência do sistema do usuário
+        body.classList.add('dark');
+    }
+
+    // 2. Evento de Clique
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark');
+        
+        // Salva a escolha do usuário
+        const currentTheme = body.classList.contains('dark') ? 'dark' : 'light';
+        localStorage.setItem('theme', currentTheme);
+        
+        // Efeito de feedback visual
+        themeToggle.style.transform = "scale(0.9)";
+        setTimeout(() => themeToggle.style.transform = "scale(1)", 100);
     });
 
-    // 2. Lógica de Filtro da Galeria
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const cards = document.querySelectorAll('.feature-card');
-
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Mudar botão ativo
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-
-            const filter = btn.getAttribute('data-filter');
-
-            cards.forEach(card => {
-                if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                    card.style.display = 'block';
-                    card.style.animation = 'fadeIn 0.5s ease';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
+    // 3. Animação de entrada dos itens da galeria
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+            }
         });
-    });
+    }, { threshold: 0.1 });
 
-    // 3. Botão "Ver Mais" - Alerta Simples (Pode ser um modal)
-    document.querySelectorAll('.btn-more').forEach(btn => {
-        btn.addEventListener('click', () => {
-            alert("Em breve: Detalhes técnicos sobre esta inovação!");
-        });
+    document.querySelectorAll('.media-item').forEach(item => {
+        item.style.opacity = "0";
+        item.style.transform = "translateY(20px)";
+        item.style.transition = "all 0.6s ease-out";
+        observer.observe(item);
     });
 });
