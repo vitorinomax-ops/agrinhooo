@@ -3,48 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgroPro 2026 | Responsividade Premium</title>
+    <title>AgroPro 2026 | Inovação Sustentável</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body class="light-theme">
 
-    <header class="navbar">
+    <header class="navbar" id="header">
         <div class="container flex-row">
             <div class="logo">AGRO<span>PRO</span></div>
-            <nav class="nav-menu">
+            <nav class="nav-links">
                 <a href="#tecnologia">Tecnologia</a>
-                <a href="#conteudo">Conteúdo</a>
-                <button id="theme-toggle" class="btn-icon">🌓</button>
+                <a href="#conhecimento">Conhecimento</a>
+                <button id="theme-toggle" class="btn-theme">🌓</button>
             </nav>
         </div>
     </header>
 
     <main>
         <section class="hero container">
-            <div class="hero-inner">
-                <span class="badge">Agrinho 2026</span>
-                <h1>Arquitetura de Dados <br><span>no Campo</span></h1>
-                <p>Estrutura otimizada para leitura em qualquer dispositivo.</p>
+            <div class="hero-text">
+                <span class="badge">Projeto Agrinho 2026</span>
+                <h1>O Futuro do Campo é <span class="gradient">Digital</span></h1>
+                <p>Tecnologia e sustentabilidade unidas para alimentar o amanhã.</p>
+                <div class="hero-actions">
+                    <button class="btn-primary">Explorar Agora</button>
+                    <button class="btn-secondary">Saber Mais</button>
+                </div>
             </div>
         </section>
 
-        <section id="conteudo" class="container section-padding">
-            <div class="tabs-box">
-                <div class="tabs-nav">
-                    <button class="tab-btn active" data-tab="tab1">🌱 Bio-Tech</button>
-                    <button class="tab-btn" data-tab="tab2">🛰️ Digital</button>
-                </div>
-                
-                <div class="tabs-content">
-                    <div id="tab1" class="tab-pane active">
-                        <div class="content-grid">
+        <section id="conhecimento" class="container section-padding">
+            <div class="tabs-container glass">
+                <nav class="tabs-header">
+                    <button class="tab-btn active" data-tab="ia">🤖 IA Rural</button>
+                    <button class="tab-btn" data-tab="bio">🌱 BioTech</button>
+                    <button class="tab-btn" data-tab="dados">📊 Dados</button>
+                </nav>
+
+                <div class="tabs-body">
+                    <div id="ia" class="tab-pane active">
+                        <div class="content-split">
                             <div class="text">
-                                <h3>Sustentabilidade Aplicada</h3>
-                                <p>Conteúdo denso organizado em colunas que se adaptam automaticamente.</p>
+                                <h2>Inteligência Artificial</h2>
+                                <p>Algoritmos avançados que analisam a saúde da lavoura pixel por pixel, reduzindo em 40% o uso de defensivos.</p>
+                                <ul class="check-list">
+                                    <li>Previsão climática precisa</li>
+                                    <li>Detecção precoce de pragas</li>
+                                    <li>Otimização de colheita</li>
+                                </ul>
                             </div>
-                            <div class="video-wrapper">
-                                <iframe src="https://www.youtube.com/embed/WdVAxpc5RXA" frameborder="0" allowfullscreen></iframe>
+                            <div class="media">
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/WdVAxpc5RXA" frameborder="0" allowfullscreen></iframe>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -53,17 +65,19 @@
         </section>
 
         <section class="container section-padding">
-            <div class="image-gallery">
-                <div class="img-card"><img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=400" alt="Agro"></div>
-                <div class="img-card"><img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=400" alt="Agro"></div>
-                <div class="img-card"><img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=400" alt="Agro"></div>
+            <h2 class="title-center">Inovações em Foco</h2>
+            <div class="image-grid">
+                <div class="img-card"><img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=600" alt="Drone"></div>
+                <div class="img-card"><img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=600" alt="Irrigação"></div>
+                <div class="img-card"><img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=600" alt="Trator"></div>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 AgroPro - Estrutura Profissional</p>
+        <div class="container footer-flex">
+            <p>&copy; 2026 AgroPro - Tecnologia a serviço da vida.</p>
+            <div class="social">INSTAGRAM | YOUTUBE</div>
         </div>
     </footer>
 
