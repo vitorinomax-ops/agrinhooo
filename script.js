@@ -1,24 +1,31 @@
-// Lógica de Troca de Tema
-const themeToggle = document.getElementById('theme-toggle');
-themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    const isDark = document.body.classList.contains('dark-mode');
-    localStorage.setItem('agro-theme', isDark ? 'dark' : 'light');
-});
+tabsHandler() {
+    const btns = document.querySelectorAll('.hub-btn');
+    const contentTitle = document.querySelector('.panel-text h3');
+    const contentDesc = document.querySelector('.panel-text p');
+    
+    const data = {
+        ia: { title: "Visual Computing", desc: "Drones com sensores hiperespectrais que detectam pragas antes do olho humano." },
+        bio: { title: "Regenerative Bio", desc: "Microbiologia aplicada para restaurar a saúde do solo e sequestro de carbono." },
+        iot: { title: "IoT Mesh", desc: "Sensores subterrâneos de baixa latência monitorando umidade e nutrientes 24/7." }
+    };
 
-// Navegação de Abas
-const tabs = document.querySelectorAll('.tab-btn');
-tabs.forEach(btn => {
-    btn.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        btn.classList.add('active');
-        // Aqui você pode adicionar lógica para trocar o conteúdo do ID se necessário
+    btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const target = btn.dataset.target;
+            
+            // Ativa botão
+            btns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            // Transição suave de conteúdo
+            const display = document.querySelector('.hub-display');
+            display.style.opacity = '0';
+            
+            setTimeout(() => {
+                contentTitle.innerText = data[target].title;
+                contentDesc.innerText = data[target].desc;
+                display.style.opacity = '1';
+            }, 300);
+        });
     });
-});
-
-// Scroll suave e efeito na Navbar
-window.addEventListener('scroll', () => {
-    const header = document.getElementById('header');
-    header.style.padding = window.scrollY > 50 ? '10px 0' : '15px 0';
-    header.style.boxShadow = window.scrollY > 50 ? '0 10px 30px rgba(0,0,0,0.1)' : 'none';
-});
+}
