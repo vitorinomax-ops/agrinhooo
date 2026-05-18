@@ -3,58 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgroPro 2026 | Tecnologia de Ponta</title>
+    <title>Agrinho 2026 | Inovação e Sustentabilidade</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
-<body class="light-theme">
+<body class="light-mode">
 
     <header class="navbar" id="header">
-        <div class="container flex-row">
-            <div class="logo">AGRO<span>PRO</span></div>
-            <nav class="nav-links">
-                <a href="#tecnologia">Inovação</a>
-                <a href="#conhecimento">Conteúdo</a>
-                <button id="theme-toggle" class="btn-theme-switch">🌓</button>
+        <div class="container flex-nav">
+            <div class="logo">AGRO<span>2026</span></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#inovacao">Inovação</a></li>
+                    <li><a href="#conhecimento">Conhecimento</a></li>
+                </ul>
             </nav>
+            <button id="theme-toggle" class="btn-theme">🌓</button>
         </div>
     </header>
 
     <main>
-        <section class="hero container">
-            <div class="hero-inner">
-                <span class="badge-premium">Agrinho 2026</span>
-                <h1>O Futuro do Campo é <span class="gradient-text">Conectado</span></h1>
-                <p>Implementando sistemas inteligentes para uma agricultura sustentável e de alta precisão.</p>
-                <div class="hero-cta">
-                    <button class="btn-main">Conhecer Soluções</button>
-                    <button class="btn-outline">Assista o Vídeo</button>
+        <section id="inicio" class="hero">
+            <div class="container hero-content">
+                <span class="badge">Educação e Tecnologia</span>
+                <h1>O Futuro do Campo é <span class="text-gradient">Sustentável</span></h1>
+                <p>Conectando as novas gerações às soluções digitais que transformam o agronegócio paranaense.</p>
+                <div class="cta-group">
+                    <a href="#conhecimento" class="btn-primary">Explorar Portal</a>
+                    <a href="#inovacao" class="btn-secondary">Ver Inovações</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="inovacao" class="container section-padding">
+            <h2 class="section-title">Tecnologias em Foco</h2>
+            <div class="gallery-grid">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&q=80&w=500" alt="Drones">
+                    <div class="card-overlay"><span>Monitoramento Aéreo</span></div>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&q=80&w=500" alt="Irrigação">
+                    <div class="card-overlay"><span>Irrigação Inteligente</span></div>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&q=80&w=500" alt="Automação">
+                    <div class="card-overlay"><span>Maquinário Autônomo</span></div>
                 </div>
             </div>
         </section>
 
         <section id="conhecimento" class="container section-padding">
-            <div class="tabs-box glass-effect">
+            <div class="tabs-container glass">
                 <div class="tabs-nav">
-                    <button class="tab-btn active" data-tab="ia">🤖 IA Rural</button>
-                    <button class="tab-btn" data-tab="drone">🛰️ Monitoramento</button>
-                    <button class="tab-btn" data-tab="solo">🌱 Bio-Solo</button>
+                    <button class="tab-btn active" data-tab="tab-ia">Inteligência Artificial</button>
+                    <button class="tab-btn" data-tab="tab-solo">Saúde do Solo</button>
                 </div>
-                
                 <div class="tabs-content">
-                    <div id="ia" class="tab-pane active">
-                        <div class="info-grid">
-                            <div class="info-text">
-                                <h2>Inteligência Artificial Aplicada</h2>
-                                <p>Sistemas que aprendem com o clima e o solo para maximizar a colheita com desperdício zero.</p>
-                                <ul class="features-list">
-                                    <li>Análise preditiva de pragas</li>
-                                    <li>Economia de 30% em insumos</li>
-                                    <li>Relatórios em tempo real</li>
-                                </ul>
+                    <div id="tab-ia" class="tab-pane active">
+                        <div class="split-content">
+                            <div class="text">
+                                <h3>IA no Cotidiano Rural</h3>
+                                <p>Sistemas especialistas processam dados de satélite para prever o clima e otimizar o uso de insumos, garantindo eficiência máxima.</p>
                             </div>
-                            <div class="info-media">
-                                <div class="video-frame">
+                            <div class="media">
+                                <div class="video-box">
                                     <iframe src="https://www.youtube.com/embed/WdVAxpc5RXA" frameborder="0" allowfullscreen></iframe>
                                 </div>
                             </div>
@@ -63,30 +77,11 @@
                 </div>
             </div>
         </section>
-
-        <section id="tecnologia" class="container section-padding">
-            <h2 class="section-title">Inovações enfileiradas</h2>
-            <div class="premium-gallery">
-                <div class="card-img">
-                    <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=500" alt="Monitoramento">
-                    <div class="card-overlay"><h4>Drones 4K</h4></div>
-                </div>
-                <div class="card-img">
-                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=500" alt="Irrigação">
-                    <div class="card-overlay"><h4>Irrigação</h4></div>
-                </div>
-                <div class="card-img">
-                    <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=500" alt="Máquina">
-                    <div class="card-overlay"><h4>Automação</h4></div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer class="footer">
-        <div class="container footer-grid">
-            <div class="footer-logo">AGRO<span>PRO</span></div>
-            <p>&copy; 2026 Tecnologia para o Campo. Agrinho Paraná.</p>
+        <div class="container">
+            <p>&copy; 2026 Agrinho Paraná - Conectando Campo e Cidade.</p>
         </div>
     </footer>
 
