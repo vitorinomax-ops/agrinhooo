@@ -3,67 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgroPro 2026 | Soluções Digitais</title>
+    <title>Portal AgroConhecimento | Agrinho 2026</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header class="navbar" id="main-header">
+    <header class="navbar">
         <div class="container nav-content">
-            <div class="logo">
-                <div class="logo-circle"></div>
-                <strong>AGRO<span>PRO</span></strong>
-            </div>
-            
-            <nav class="nav-links">
-                <a href="#home" class="nav-item">Início</a>
-                <a href="#galeria" class="nav-item">Inovação</a>
-                <a href="#contato" class="btn-cta">Acessar Portal</a>
-            </nav>
-
-            <button id="theme-toggle" class="theme-switch" aria-label="Trocar Tema">
-                <div class="switch-dot"></div>
-            </button>
+            <div class="logo">AGRO<span>HUB</span></div>
+            <button id="theme-toggle" class="btn-theme">🌓 Alternar Tema</button>
         </div>
     </header>
 
-    <main>
-        <section id="home" class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <span class="tagline">Agrinho 2026 • Tecnologia Sustentável</span>
-                    <h1>Produção sem <br><span class="highlight">Fronteiras</span></h1>
-                    <p>Otimizando o ciclo agrícola com inteligência artificial e respeito à terra.</p>
-                </div>
-            </div>
-        </section>
+    <main class="container main-content">
+        <header class="section-header">
+            <h1>Enciclopédia Digital Agro</h1>
+            <p>Explore o conteúdo técnico e as inovações do campo em um só lugar.</p>
+        </header>
 
-        <section id="galeria" class="container section-padding">
-            <div class="grid-layout">
-                <div class="video-card glass">
-                    <iframe src="https://www.youtube.com/embed/WdVAxpc5RXA" title="Agro Sustentável" frameborder="0" allowfullscreen loading="lazy"></iframe>
-                </div>
-                
-                <div class="gallery-wrapper">
-                    <article class="media-card">
-                        <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?auto=format&fit=crop&q=80&w=600" alt="Plantação">
-                        <div class="card-info">
-                            <h4>Biotecnologia</h4>
-                            <p>Análise de solo em tempo real.</p>
+        <div class="tabs-container glass">
+            <nav class="tabs-header">
+                <button class="tab-btn active" data-tab="tecnologia">🛰️ Tecnologia</button>
+                <button class="tab-btn" data-tab="sustentabilidade">🌱 Sustentabilidade</button>
+                <button class="tab-btn" data-tab="economia">📊 Economia Rural</button>
+                <button class="tab-btn" data-tab="educacao">📚 Educação</button>
+            </nav>
+
+            <div class="tabs-body">
+                <article class="tab-content active" id="tecnologia">
+                    <h2>Inovação e Agricultura 4.0</h2>
+                    <div class="content-grid">
+                        <div class="text-block">
+                            <p>A tecnologia no campo deixou de ser um diferencial para se tornar uma necessidade básica. O uso de IA permite prever safras com 95% de precisão.</p>
+                            <ul>
+                                <li><strong>Internet das Coisas (IoT):</strong> Sensores que medem a umidade do solo em tempo real.</li>
+                                <li><strong>Big Data:</strong> Análise de milhares de dados meteorológicos para decidir o momento exato do plantio.</li>
+                            </ul>
                         </div>
-                    </article>
-                    
-                    <article class="media-card">
-                        <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&q=80&w=600" alt="Máquina">
-                        <div class="card-info">
-                            <h4>Automação</h4>
-                            <p>Tratores autônomos de alta precisão.</p>
+                        <div class="media-block">
+                            <iframe src="https://www.youtube.com/embed/WdVAxpc5RXA" frameborder="0" allowfullscreen></iframe>
                         </div>
-                    </article>
-                </div>
+                    </div>
+                </article>
+
+                <article class="tab-content" id="sustentabilidade">
+                    <h2>Práticas Regenerativas</h2>
+                    <div class="content-grid">
+                        <div class="text-block">
+                            <p>Sustentabilidade é produzir mais com menos impacto. O foco atual é o sequestro de carbono e a recuperação de solos degradados.</p>
+                            <div class="info-card">
+                                <h3>Plantio Direto</h3>
+                                <p>Técnica que evita a erosão e mantém a umidade natural da terra.</p>
+                            </div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&q=80&w=600" alt="Irrigação">
+                    </div>
+                </article>
+
+                <article class="tab-content" id="economia">
+                    <h2>O PIB do Agronegócio</h2>
+                    <p>O setor representa quase 30% do PIB brasileiro, sendo o pilar da balança comercial do país.</p>
+                    <div class="stats-row">
+                        <div class="stat-item"><strong>27%</strong><p>Participação no PIB</p></div>
+                        <div class="stat-item"><strong>1.2bi</strong><p>Toneladas Exportadas</p></div>
+                    </div>
+                </article>
+
+                <article class="tab-content" id="educacao">
+                    <h2>Agrinho e o Futuro</h2>
+                    <p>A educação rural transforma crianças em cidadãos conscientes e produtores inovadores.</p>
+                    <button class="btn-cta">Baixar Guia Educativo</button>
+                </article>
             </div>
-        </section>
+        </div>
     </main>
 
     <script src="script.js"></script>
