@@ -3,51 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgroPro 2026 | Ecossistema Digital</title>
+    <title>AgroPro 2026 | Soluções Digitais</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header class="navbar">
+    <header class="navbar" id="main-header">
         <div class="container nav-content">
-            <div class="logo">AGRO<span>PRO</span></div>
+            <div class="logo">
+                <div class="logo-circle"></div>
+                <strong>AGRO<span>PRO</span></strong>
+            </div>
+            
             <nav class="nav-links">
-                <a href="#galeria">Mídia</a>
-                <a href="#tecnologia">Tecnologias</a>
-                <a href="#contato" class="btn-nav">Portal do Produtor</a>
+                <a href="#home" class="nav-item">Início</a>
+                <a href="#galeria" class="nav-item">Inovação</a>
+                <a href="#contato" class="btn-cta">Acessar Portal</a>
             </nav>
-            <button id="theme-toggle" aria-label="Alternar tema">
-                <span class="icon-sun">☀️</span>
-                <span class="icon-moon">🌙</span>
+
+            <button id="theme-toggle" class="theme-switch" aria-label="Trocar Tema">
+                <div class="switch-dot"></div>
             </button>
         </div>
     </header>
 
     <main>
-        <section class="hero container">
-            <h1>Inteligência que <br><span class="gradient-text">Alimenta o Mundo</span></h1>
-            <p>Conectando dados, máquinas e natureza no projeto Agrinho 2026.</p>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <span class="tagline">Agrinho 2026 • Tecnologia Sustentável</span>
+                    <h1>Produção sem <br><span class="highlight">Fronteiras</span></h1>
+                    <p>Otimizando o ciclo agrícola com inteligência artificial e respeito à terra.</p>
+                </div>
+            </div>
         </section>
 
         <section id="galeria" class="container section-padding">
-            <h2 class="section-title">Ecossistema em Foco</h2>
-            <div class="media-grid">
-                <div class="media-item video-wide">
-                    <iframe src="https://www.youtube.com/embed/WdVAxpc5RXA" title="Agro Sustentável" frameborder="0" allowfullscreen></iframe>
+            <div class="grid-layout">
+                <div class="video-card glass">
+                    <iframe src="https://www.youtube.com/embed/WdVAxpc5RXA" title="Agro Sustentável" frameborder="0" allowfullscreen loading="lazy"></iframe>
                 </div>
                 
-                <div class="media-item">
-                    <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?auto=format&fit=crop&q=80&w=600" alt="Plantação tecnológica">
-                    <div class="overlay"><span>Bio-Tech</span></div>
-                </div>
-                <div class="media-item">
-                    <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&q=80&w=600" alt="Maquinário moderno">
-                    <div class="overlay"><span>Automação</span></div>
-                </div>
-                <div class="media-item">
-                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&q=80&w=600" alt="Irrigação">
-                    <div class="overlay"><span>Sustentabilidade</span></div>
+                <div class="gallery-wrapper">
+                    <article class="media-card">
+                        <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?auto=format&fit=crop&q=80&w=600" alt="Plantação">
+                        <div class="card-info">
+                            <h4>Biotecnologia</h4>
+                            <p>Análise de solo em tempo real.</p>
+                        </div>
+                    </article>
+                    
+                    <article class="media-card">
+                        <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&q=80&w=600" alt="Máquina">
+                        <div class="card-info">
+                            <h4>Automação</h4>
+                            <p>Tratores autônomos de alta precisão.</p>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
