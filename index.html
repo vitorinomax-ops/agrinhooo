@@ -3,81 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal AgroConhecimento | Agrinho 2026</title>
+    <title>AgroPro 2026 | Responsividade Premium</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="light-theme">
 
     <header class="navbar">
-        <div class="container nav-content">
-            <div class="logo">AGRO<span>HUB</span></div>
-            <button id="theme-toggle" class="btn-theme">🌓 Alternar Tema</button>
+        <div class="container flex-row">
+            <div class="logo">AGRO<span>PRO</span></div>
+            <nav class="nav-menu">
+                <a href="#tecnologia">Tecnologia</a>
+                <a href="#conteudo">Conteúdo</a>
+                <button id="theme-toggle" class="btn-icon">🌓</button>
+            </nav>
         </div>
     </header>
 
-    <main class="container main-content">
-        <header class="section-header">
-            <h1>Enciclopédia Digital Agro</h1>
-            <p>Explore o conteúdo técnico e as inovações do campo em um só lugar.</p>
-        </header>
+    <main>
+        <section class="hero container">
+            <div class="hero-inner">
+                <span class="badge">Agrinho 2026</span>
+                <h1>Arquitetura de Dados <br><span>no Campo</span></h1>
+                <p>Estrutura otimizada para leitura em qualquer dispositivo.</p>
+            </div>
+        </section>
 
-        <div class="tabs-container glass">
-            <nav class="tabs-header">
-                <button class="tab-btn active" data-tab="tecnologia">🛰️ Tecnologia</button>
-                <button class="tab-btn" data-tab="sustentabilidade">🌱 Sustentabilidade</button>
-                <button class="tab-btn" data-tab="economia">📊 Economia Rural</button>
-                <button class="tab-btn" data-tab="educacao">📚 Educação</button>
-            </nav>
-
-            <div class="tabs-body">
-                <article class="tab-content active" id="tecnologia">
-                    <h2>Inovação e Agricultura 4.0</h2>
-                    <div class="content-grid">
-                        <div class="text-block">
-                            <p>A tecnologia no campo deixou de ser um diferencial para se tornar uma necessidade básica. O uso de IA permite prever safras com 95% de precisão.</p>
-                            <ul>
-                                <li><strong>Internet das Coisas (IoT):</strong> Sensores que medem a umidade do solo em tempo real.</li>
-                                <li><strong>Big Data:</strong> Análise de milhares de dados meteorológicos para decidir o momento exato do plantio.</li>
-                            </ul>
-                        </div>
-                        <div class="media-block">
-                            <iframe src="https://www.youtube.com/embed/WdVAxpc5RXA" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="tab-content" id="sustentabilidade">
-                    <h2>Práticas Regenerativas</h2>
-                    <div class="content-grid">
-                        <div class="text-block">
-                            <p>Sustentabilidade é produzir mais com menos impacto. O foco atual é o sequestro de carbono e a recuperação de solos degradados.</p>
-                            <div class="info-card">
-                                <h3>Plantio Direto</h3>
-                                <p>Técnica que evita a erosão e mantém a umidade natural da terra.</p>
+        <section id="conteudo" class="container section-padding">
+            <div class="tabs-box">
+                <div class="tabs-nav">
+                    <button class="tab-btn active" data-tab="tab1">🌱 Bio-Tech</button>
+                    <button class="tab-btn" data-tab="tab2">🛰️ Digital</button>
+                </div>
+                
+                <div class="tabs-content">
+                    <div id="tab1" class="tab-pane active">
+                        <div class="content-grid">
+                            <div class="text">
+                                <h3>Sustentabilidade Aplicada</h3>
+                                <p>Conteúdo denso organizado em colunas que se adaptam automaticamente.</p>
+                            </div>
+                            <div class="video-wrapper">
+                                <iframe src="https://www.youtube.com/embed/WdVAxpc5RXA" frameborder="0" allowfullscreen></iframe>
                             </div>
                         </div>
-                        <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&q=80&w=600" alt="Irrigação">
                     </div>
-                </article>
-
-                <article class="tab-content" id="economia">
-                    <h2>O PIB do Agronegócio</h2>
-                    <p>O setor representa quase 30% do PIB brasileiro, sendo o pilar da balança comercial do país.</p>
-                    <div class="stats-row">
-                        <div class="stat-item"><strong>27%</strong><p>Participação no PIB</p></div>
-                        <div class="stat-item"><strong>1.2bi</strong><p>Toneladas Exportadas</p></div>
-                    </div>
-                </article>
-
-                <article class="tab-content" id="educacao">
-                    <h2>Agrinho e o Futuro</h2>
-                    <p>A educação rural transforma crianças em cidadãos conscientes e produtores inovadores.</p>
-                    <button class="btn-cta">Baixar Guia Educativo</button>
-                </article>
+                </div>
             </div>
-        </div>
+        </section>
+
+        <section class="container section-padding">
+            <div class="image-gallery">
+                <div class="img-card"><img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=400" alt="Agro"></div>
+                <div class="img-card"><img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=400" alt="Agro"></div>
+                <div class="img-card"><img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=400" alt="Agro"></div>
+            </div>
+        </section>
     </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 AgroPro - Estrutura Profissional</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
