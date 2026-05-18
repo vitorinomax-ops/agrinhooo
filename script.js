@@ -1,43 +1,59 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const themeToggle = document.getElementById('theme-toggle');
-    const body = document.body;
+"use strict";
 
-    // 1. Checar preferência salva no navegador
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        body.classList.add(savedTheme);
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        // Se não tiver salvo, checa a preferência do sistema do usuário
-        body.classList.add('dark');
-    }
-
-    // 2. Evento de Clique
-    themeToggle.addEventListener('click', () => {
-        body.classList.toggle('dark');
+const App = {
+    init() {
+        this.themeToggle = document.getElementById('theme-toggle');
+        this.header = document.getElementById('main-header');
         
-        // Salva a escolha do usuário
-        const currentTheme = body.classList.contains('dark') ? 'dark' : 'light';
-        localStorage.setItem('theme', currentTheme);
-        
-        // Efeito de feedback visual
-        themeToggle.style.transform = "scale(0.9)";
-        setTimeout(() => themeToggle.style.transform = "scale(1)", 100);
-    });
+        this.setupTheme();
+        this.setupScrollEffect();
+        this.revealOnScroll();
+    },
 
-    // 3. Animação de entrada dos itens da galeria
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = "1";
-                entry.target.style.transform = "translateY(0)";
+    setupTheme() {
+        const currentTheme = localStorage.getItem('agro-theme') || 'light';
+        document.body.classList.toggle('dark', currentTheme === 'dark');
+
+        this.themeToggle.addEventListener('click', () => {
+            const isDark = document.body.classList.toggle('dark');
+            localStorage.setItem('agro-theme', isDark ? 'dark' : 'light');
+        });
+    },
+
+    setupScrollEffect() {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                this.header.style.padding = "12px 0";
+                this.header.style.boxShadow = "0 10px 30px rgba(0,0,0,0.05)";
+            } else {
+                this.header.style.padding = "18px 0";
+                this.header.style.boxShadow = "none";
             }
         });
-    }, { threshold: 0.1 });
+    },
 
-    document.querySelectorAll('.media-item').forEach(item => {
-        item.style.opacity = "0";
-        item.style.transform = "translateY(20px)";
-        item.style.transition = "all 0.6s ease-out";
-        observer.observe(item);
-    });
-});
+    revealOnScroll() {
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.media-card, .video-card').forEach(el => {
+            el.style.opacity = "0";
+            el.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+            observer.observe(el);
+        });
+    }
+};
+
+// CSS adicional para a animação do JS
+const style = document.createElement('style');
+style.textContent = `.fade-in { opacity: 1 !important; transform: translateY(0) !important; }`;
+document.head.appendChild(style);
+
+App.init();
