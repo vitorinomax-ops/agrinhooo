@@ -1,40 +1,56 @@
-/* --- Adicione estas funções ao seu AgroApp --- */
+document.addEventListener('DOMContentLoaded', () => {
+    // Variáveis de Estado
+    let fontScale = 1;
+    const root = document.documentElement;
+    const synth = window.speechSynthesis;
+    let utterance = null;
 
-const AgroApp = {
-    init() {
-        this.navHandler();
-        this.tabsHandler();
-        this.themeHandler();
-        this.revealManager();
-        this.animateStats(); // Nova função
-        this.parallaxHero(); // Nova função
-    },
+    // 1. Controle de Fonte
+    document.getElementById('f-inc').addEventListener('click', () => {
+        if (fontScale < 1.5) {
+            fontScale += 0.1;
+            updateFont();
+        }
+    });
 
-    // Animar os números (+24% e -15%) ao carregar
-    animateStats() {
-        const stats = document.querySelectorAll('.stat span');
-        stats.forEach(stat => {
-            const target = parseInt(stat.innerText.replace(/\D/g, ''));
-            let count = 0;
-            const updateCount = () => {
-                const speed = target / 50;
-                if (count < target) {
-                    count += speed;
-                    stat.innerText = (stat.innerText.includes('+') ? '+' : '-') + Math.ceil(count) + '%';
-                    setTimeout(updateCount, 30);
-                }
-            };
-            updateCount();
-        });
-    },
+    document.getElementById('f-dec').addEventListener('click', () => {
+        if (fontScale > 0.8) {
+            fontScale -= 0.1;
+            updateFont();
+        }
+    });
 
-    // Efeito Parallax no Visual do Hero
-    parallaxHero() {
-        const visual = document.querySelector('.hero-visual');
-        window.addEventListener('mousemove', (e) => {
-            const x = (window.innerWidth - e.pageX * 2) / 100;
-            const y = (window.innerHeight - e.pageY * 2) / 100;
-            visual.style.transform = `translateX(${x}px) translateY(${y}px)`;
-        });
+    function updateFont() {
+        root.style.setProperty('--font-scale', fontScale);
     }
-};
+
+    // 2. Modo Escuro/Claro (Reutilizando sua lógica anterior otimizada)
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+        document.body.classList.toggle('light-theme');
+    });
+
+    // 3. Leitura por Voz (Apenas Conteúdo Principal)
+    document.getElementById('btn-read').addEventListener('click', () => {
+        // Cancela leituras anteriores
+        synth.cancel();
+
+        // Seleciona apenas textos de parágrafos e títulos dentro do MAIN
+        const mainContent = document.getElementById('main-content');
+        const textNodes = mainContent.querySelectorAll('h1, h2, h3, p, li');
+        
+        // Concatena o texto ignorando botões e links de navegação
+        const fullText = Array.from(textNodes)
+            .map(node => node.innerText)
+            .join('. ');
+
+        utterance = new SpeechSynthesisUtterance(fullText);
+        utterance.lang = 'pt-BR';
+        utterance.rate = 1.1; // Velocidade levemente aumentada
+
+        synth.speak(utterance);
+    });
+
+    document.getElementById('btn-stop').addEventListener('click', () => {
+        synth.cancel();
+    });
+});
