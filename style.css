@@ -1,12 +1,48 @@
-.live-ticker {
-    display: flex;
-    gap: 30px;
-    background: rgba(0, 255, 136, 0.05);
-    padding: 10px 0;
-    border-top: 1px solid rgba(0, 255, 136, 0.1);
-    border-bottom: 1px solid rgba(0, 255, 136, 0.1);
-    font-size: 0.8rem;
-    overflow: hidden;
-    white-space: nowrap;
+:root {
+    /* Tipografia Fluida: min 1rem, ideal 1vw+0.5rem, max 1.5rem */
+    --base-font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+    --title-size: clamp(2.5rem, 5vw + 1rem, 5rem);
+    --font-scale: 1; /* Controlado via JS */
 }
-/* Adicione uma animação de scroll infinito aqui */
+
+body {
+    font-size: calc(var(--base-font-size) * var(--font-scale));
+    transition: font-size 0.2s ease, background 0.3s ease;
+}
+
+/* Caixa Flutuante de Acessibilidade - Posicionada no Canto Inferior Direito */
+.access-bar {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: var(--surface);
+    backdrop-filter: blur(15px);
+    padding: 12px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.1);
+    z-index: 9999;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.access-bar button {
+    background: rgba(255,255,255,0.1);
+    border: none;
+    color: var(--primary);
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.access-bar button:hover { background: var(--primary); color: #000; }
+
+/* Responsividade de Grid */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(clamp(300px, 100%, 600px), 1fr));
+    gap: 2rem;
+}
