@@ -1,47 +1,5 @@
-/* --- Melhoria nas Variáveis e Suporte a Ecrãs Retina --- */
-:root {
-    --primary-glow: rgba(0, 255, 136, 0.4);
-    --accent-glow: rgba(0, 209, 255, 0.3);
-}
-
-/* --- Efeito de Texto Gradiente Dinâmico --- */
-.dynamic-title span {
-    background: linear-gradient(135deg, #00ff88, #00d1ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 5px 15px var(--primary-glow));
-}
-
-/* --- Cartão de Stats com Glassmorphism Real --- */
-.glass-card-stats {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-    border-radius: 24px;
-    padding: 25px;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease;
-}
-
-.glass-card-stats:hover {
-    transform: translateY(-10px) rotateX(5deg);
-}
-
-/* --- Melhoria no Bento Grid --- */
-.bento-item {
-    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-    cursor: pointer;
-}
-
-.bento-item::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, transparent 60%);
-    opacity: 0.6;
-}
-
-.bento-item:hover {
-    transform: scale(1.02);
-    border-color: var(--primary);
-}
+<div class="live-ticker">
+    <div class="ticker-item"><span>SOJA:</span> R$ 134,50 <small>+0.4%</small></div>
+    <div class="ticker-item"><span>HUMIDADE:</span> 62% <small>Ideal</small></div>
+    <div class="ticker-item"><span>DÓLAR:</span> R$ 4,92 <small>-0.1%</small></div>
+</div>
